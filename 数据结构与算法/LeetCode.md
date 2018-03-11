@@ -1,4 +1,4 @@
-1. Two Sum
+#1. Two Sum
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
@@ -11,6 +11,7 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 
+```
 public int[] twoSum(int[] nums, int target) {
 	int[] result = new int[2];
 	Map<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -26,10 +27,9 @@ public int[] twoSum(int[] nums, int target) {
 	}
 	return result;
 }
+```
 
-======================================================
-
-2. Add Two Numbers
+#2. Add Two Numbers
 
 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
@@ -41,6 +41,7 @@ Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
 
+```
 public class Solution {
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode dunmy = new ListNode(-1);
@@ -67,10 +68,9 @@ class ListNode {
 	ListNode next;
 	ListNode(int x) { val = x; }
 }
+```
 
-======================================================
-
-3. Longest Substring Without Repeating Characters
+#3. Longest Substring Without Repeating Characters
 
 Given a string, find the length of the longest substring without repeating characters.
 
@@ -82,6 +82,7 @@ Given "bbbbb", the answer is "b", with the length of 1.
 
 Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
+```
 public static int lengthOfLongestSubstring(String s) {
 	int result = 0;
 	Map<Character, Integer> map = new HashMap<Character, Integer>();
@@ -95,10 +96,9 @@ public static int lengthOfLongestSubstring(String s) {
 	}
 	return result;
 }
+```
 
-======================================================
-
-4. Median of Two Sorted Arrays
+#4. Median of Two Sorted Arrays
 
 There are two sorted arrays nums1 and nums2 of size m and n respectively.
 
@@ -128,6 +128,7 @@ The median is (2 + 3)/2 = 2.5
 k - k / 2小元素，于是得到了数据规模变小的同类问题，递归解决
 如果 k / 2 大于某数列个数，所求元素必然不在另一数列的前k / 2个元素中，同上操作就好。
 
+```
 public double findMedianSortedArrays(int[] A, int[] B) {
 	int m = A.length, n = B.length;
 	int l = (m + n + 1) / 2;
@@ -156,3 +157,4 @@ public double getkth(int[] A, int aStart, int[] B, int bStart, int k) {
 	else
 		return getkth(A, aStart, B, bStart + k / 2, k - k / 2);
 }
+```
