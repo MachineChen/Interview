@@ -1,4 +1,5 @@
-#1. Two Sum
+1. Two Sum
+========
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
@@ -29,7 +30,8 @@ public int[] twoSum(int[] nums, int target) {
 }
 ```
 
-#2. Add Two Numbers
+2. Add Two Numbers
+========
 
 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
@@ -70,7 +72,8 @@ class ListNode {
 }
 ```
 
-#3. Longest Substring Without Repeating Characters
+3. Longest Substring Without Repeating Characters
+========
 
 Given a string, find the length of the longest substring without repeating characters.
 
@@ -98,7 +101,8 @@ public static int lengthOfLongestSubstring(String s) {
 }
 ```
 
-#4. Median of Two Sorted Arrays
+4. Median of Two Sorted Arrays
+========
 
 There are two sorted arrays nums1 and nums2 of size m and n respectively.
 
