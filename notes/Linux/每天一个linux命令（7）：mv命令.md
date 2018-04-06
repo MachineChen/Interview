@@ -1,38 +1,38 @@
-mv������move����д�����������ƶ��ļ����߽��ļ�������move (rename) files������Linuxϵͳ�³��õ�����������������ļ�����Ŀ¼��
+mv命令是move的缩写，可以用来移动文件或者将文件改名（move (rename) files），是Linux系统下常用的命令，经常用来备份文件或者目录。
 
-1�������ʽ��
+1．命令格式：
 
-    mv [ѡ��] Դ�ļ���Ŀ¼ Ŀ���ļ���Ŀ¼
+    mv [选项] 源文件或目录 目标文件或目录
 
-2������ܣ�
+2．命令功能：
 
-��mv�����еڶ����������͵Ĳ�ͬ����Ŀ���ļ�����Ŀ��Ŀ¼����mv����ļ���������������һ���µ�Ŀ¼�С����ڶ��������������ļ�ʱ��mv��������ļ�����������ʱ��Դ�ļ�ֻ����һ����Ҳ������ԴĿ¼����������������Դ�ļ���Ŀ¼������Ϊ������Ŀ���ļ��������ڶ����������Ѵ��ڵ�Ŀ¼����ʱ��Դ�ļ���Ŀ¼���������ж����mv���������ָ����Դ�ļ�������Ŀ��Ŀ¼�С��ڿ��ļ�ϵͳ�ƶ��ļ�ʱ��mv�ȿ������ٽ�ԭ���ļ�ɾ�������������ļ�������Ҳ����ʧ��
+视mv命令中第二个参数类型的不同（是目标文件还是目标目录），mv命令将文件重命名或将其移至一个新的目录中。当第二个参数类型是文件时，mv命令完成文件重命名，此时，源文件只能有一个（也可以是源目录名），它将所给的源文件或目录重命名为给定的目标文件名。当第二个参数是已存在的目录名称时，源文件或目录参数可以有多个，mv命令将各参数指定的源文件均移至目标目录中。在跨文件系统移动文件时，mv先拷贝，再将原有文件删除，而链至该文件的链接也将丢失。
 
-3�����������
+3．命令参数：
 
--b �����踲���ļ����򸲸�ǰ���б��ݡ� 
+-b ：若需覆盖文件，则覆盖前先行备份。 
 
--f ��force ǿ�Ƶ���˼�����Ŀ���ļ��Ѿ����ڣ�����ѯ�ʶ�ֱ�Ӹ��ǣ�
+-f ：force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；
 
--i ����Ŀ���ļ� (destination) �Ѿ�����ʱ���ͻ�ѯ���Ƿ񸲸ǣ�
+-i ：若目标文件 (destination) 已经存在时，就会询问是否覆盖！
 
--u ����Ŀ���ļ��Ѿ����ڣ��� source �Ƚ��£��Ż����(update)
+-u ：若目标文件已经存在，且 source 比较新，才会更新(update)
 
-	   -t  �� --target-directory=DIRECTORY move all SOURCE arguments into DIRECTORY����ָ��mv��Ŀ��Ŀ¼����ѡ���������ƶ����Դ�ļ���һ��Ŀ¼���������ʱĿ��Ŀ¼��ǰ��Դ�ļ��ں�
+	   -t  ： --target-directory=DIRECTORY move all SOURCE arguments into DIRECTORY，即指定mv的目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。
 
-4������ʵ����
+4．命令实例：
 
-ʵ��һ���ļ�����
+实例一：文件改名
 
-���
+命令：
 
 mv test.log test1.txt
 
-�����
+输出：
 
 [root@localhost test]# ll
 
-�ܼ� 20drwxr-xr-x 6 root root 4096 10-27 01:58 scf
+总计 20drwxr-xr-x 6 root root 4096 10-27 01:58 scf
 
 drwxrwxrwx 2 root root 4096 10-25 17:46 test3
 
@@ -46,7 +46,7 @@ drwxr-xr-x 3 root root 4096 10-25 17:56 test5
 
 [root@localhost test]# ll
 
-�ܼ� 20drwxr-xr-x 6 root root 4096 10-27 01:58 scf
+总计 20drwxr-xr-x 6 root root 4096 10-27 01:58 scf
 
 -rw-r--r-- 1 root root   16 10-28 06:04 test1.txt
 
@@ -56,21 +56,21 @@ drwxr-xr-x 2 root root 4096 10-25 17:56 test4
 
 drwxr-xr-x 3 root root 4096 10-25 17:56 test5
 
-˵����
+说明：
 
-���ļ�test.log������Ϊtest1.txt
+将文件test.log重命名为test1.txt
 
-ʵ�������ƶ��ļ�
+实例二：移动文件
 
-���
+命令：
 
 mv test1.txt test3
 
-�����
+输出：
 
 [root@localhost test]# ll
 
-�ܼ� 20drwxr-xr-x 6 root root 4096 10-27 01:58 scf
+总计 20drwxr-xr-x 6 root root 4096 10-27 01:58 scf
 
 -rw-r--r-- 1 root root   29 10-28 06:05 test1.txt
 
@@ -84,7 +84,7 @@ drwxr-xr-x 3 root root 4096 10-25 17:56 test5
 
 [root@localhost test]# ll
 
-�ܼ� 16drwxr-xr-x 6 root root 4096 10-27 01:58 scf
+总计 16drwxr-xr-x 6 root root 4096 10-27 01:58 scf
 
 drwxrwxrwx 2 root root 4096 10-28 06:09 test3
 
@@ -96,29 +96,29 @@ drwxr-xr-x 3 root root 4096 10-25 17:56 test5
 
 [root@localhost test3]# ll
 
-�ܼ� 4
+总计 4
 
 -rw-r--r-- 1 root root 29 10-28 06:05 test1.txt
 
 [root@localhost test3]#
 
-˵����
+说明：
 
-��test1.txt�ļ��Ƶ�Ŀ¼test3��
+将test1.txt文件移到目录test3中
 
-ʵ���������ļ�log1.txt,log2.txt,log3.txt�ƶ���Ŀ¼test3�С� 
+实例三：将文件log1.txt,log2.txt,log3.txt移动到目录test3中。 
 
-���
+命令：
 
 mv log1.txt log2.txt log3.txt test3
 
 mv -t /opt/soft/test/test4/ log1.txt log2.txt 	log3.txt 
 
-�����
+输出：
 
 [root@localhost test]# ll
 
-�ܼ� 28
+总计 28
 
 -rw-r--r-- 1 root root    8 10-28 06:15 log1.txt
 
@@ -132,13 +132,13 @@ drwxrwxrwx 2 root root 4096 10-28 06:09 test3
 
 [root@localhost test]# ll
 
-�ܼ� 16drwxrwxrwx 2 root root 4096 10-28 06:18 test3
+总计 16drwxrwxrwx 2 root root 4096 10-28 06:18 test3
 
 [root@localhost test]# cd test3/
 
 [root@localhost test3]# ll
 
-�ܼ� 16
+总计 16
 
 -rw-r--r-- 1 root root  8 10-28 06:15 log1.txt
 
@@ -152,7 +152,7 @@ drwxrwxrwx 2 root root 4096 10-28 06:09 test3
 
 [root@localhost test3]# ll
 
-�ܼ� 20
+总计 20
 
 -rw-r--r-- 1 root root    8 10-28 06:15 log1.txt
 
@@ -172,7 +172,7 @@ drwxr-xr-x 2 root root 4096 10-28 06:21 logs
 
 [root@localhost test4]# ll
 
-�ܼ� 12
+总计 12
 
 -rw-r--r-- 1 root root  8 10-28 06:15 log1.txt
 
@@ -182,21 +182,21 @@ drwxr-xr-x 2 root root 4096 10-28 06:21 logs
 
 [root@localhost test4]#
 
-˵����
+说明：
 
-mv log1.txt log2.txt log3.txt test3 ���log1.txt ��log2.txt�� log3.txt �����ļ��Ƶ� test3Ŀ¼��ȥ��mv -t /opt/soft/test/test4/ log1.txt log2.txt log3.txt �����ֽ������ļ��ƶ���test4Ŀ¼��ȥ
+mv log1.txt log2.txt log3.txt test3 命令将log1.txt ，log2.txt， log3.txt 三个文件移到 test3目录中去，mv -t /opt/soft/test/test4/ log1.txt log2.txt log3.txt 命令又将三个文件移动到test4目录中去
 
-ʵ���ģ����ļ�file1����Ϊfile2�����file2�Ѿ����ڣ���ѯ���Ƿ񸲸�
+实例四：将文件file1改名为file2，如果file2已经存在，则询问是否覆盖
 
-���
+命令：
 
 mv -i log1.txt log2.txt
 
-�����
+输出：
 
 [root@localhost test4]# ll
 
-�ܼ� 12
+总计 12
 
 -rw-r--r-- 1 root root  8 10-28 06:15 log1.txt
 
@@ -214,7 +214,7 @@ ererwerwer
 
 [root@localhost test4]# mv -i log1.txt log2.txt 
 
-mv���Ƿ񸲸ǡ�log2.txt��? y
+mv：是否覆盖“log2.txt”? y
 
 [root@localhost test4]# cat log2.txt 
 
@@ -222,17 +222,17 @@ odfdfs
 
 [root@localhost test4]#
 
-ʵ���壺���ļ�file1����Ϊfile2����ʹfile2���ڣ�Ҳ��ֱ�Ӹ��ǵ���
+实例五：将文件file1改名为file2，即使file2存在，也是直接覆盖掉。
 
-���
+命令：
 
 mv -f log3.txt log2.txt
 
-�����
+输出：
 
 [root@localhost test4]# ll
 
-�ܼ� 8
+总计 8
 
 -rw-r--r-- 1 root root  8 10-28 06:15 log2.txt
 
@@ -244,11 +244,11 @@ odfdfs
 
 [root@localhost test4]# cat log3
 
-cat: log3: û���Ǹ��ļ���Ŀ¼
+cat: log3: 没有那个文件或目录
 
 [root@localhost test4]# ll
 
-�ܼ� 8
+总计 8
 
 -rw-r--r-- 1 root root  8 10-28 06:15 log2.txt
 
@@ -270,23 +270,23 @@ dfosdfsdfdss
 
 [root@localhost test4]# ll
 
-�ܼ� 4
+总计 4
 
 -rw-r--r-- 1 root root 13 10-28 06:16 log2.txt
 
 [root@localhost test4]#
 
-˵����
+说明：
 
-log3.txt������ֱ�Ӹ�����log2.txt���ݣ�-f ���Ǹ�Σ�յ�ѡ�ʹ�õ�ʱ��һ��Ҫ����ͷ��������һ���������ò��ü�������
+log3.txt的内容直接覆盖了log2.txt内容，-f 这是个危险的选项，使用的时候一定要保持头脑清晰，一般情况下最好不用加上它。
 
-ʵ������Ŀ¼���ƶ�
+实例六：目录的移动
 
-���
+命令：
 
 mv dir1 dir2 
 
-�����
+输出：
 
 [root@localhost test4]# ll
 
@@ -340,19 +340,19 @@ drwxr-xr-x 2 root root 4096 10-28 06:48 test4
 
 [root@localhost test3]#
 
-˵����
+说明：
 
-���Ŀ¼dir2�����ڣ���Ŀ¼dir1����Ϊdir2�����򣬽�dir1�ƶ���dir2�С�
+如果目录dir2不存在，将目录dir1改名为dir2；否则，将dir1移动到dir2中。
 
  
 
-ʵ��7���ƶ���ǰ�ļ����µ������ļ�����һ��Ŀ¼
+实例7：移动当前文件夹下的所有文件到上一级目录
 
-���
+命令：
 
 mv * ../
 
-�����
+输出：
 
 [root@localhost test4]# ll
 
@@ -378,13 +378,13 @@ drwxr-xr-x 2 root root 4096 10-28 06:21 logs
 
 drwxr-xr-x 2 root root 4096 10-28 07:02 test4
 
-ʵ���ˣ��ѵ�ǰĿ¼��һ����Ŀ¼����ļ��ƶ�����һ����Ŀ¼��
+实例八：把当前目录的一个子目录里的文件移动到另一个子目录里
 
-���
+命令：
 
 mv test3/*.txt test5
 
-�����
+输出：
 
 [root@localhost test]# ll
 
@@ -436,13 +436,13 @@ drwxr-xr-x 2 root root 4096 10-28 07:02 test4
 
 [root@localhost test3]#
 
-ʵ���ţ��ļ�������ǰ���򵥱��ݣ�ǰ��Ӳ���-b
+实例九：文件被覆盖前做简单备份，前面加参数-b
 
-���
+命令：
 
 mv log1.txt -b log2.txt
 
-�����
+输出：
 
 [root@localhost test5]# ll
 
@@ -456,7 +456,7 @@ drwxr-xr-x 2 root root 4096 10-25 17:56 test5-1
 
 [root@localhost test5]# mv log1.txt -b log2.txt
 
-mv���Ƿ񸲸ǡ�log2.txt��? y
+mv：是否覆盖“log2.txt”? y
 
 [root@localhost test5]# ll
 
@@ -470,18 +470,18 @@ drwxr-xr-x 2 root root 4096 10-25 17:56 test5-1
 
 [root@localhost test5]#
 
-˵����
+说明：
 
--b �����ܲ�����mv��ȥ��ȡ��������VERSION_CONTROL����Ϊ���ݲ��ԡ�
+-b 不接受参数，mv会去读取环境变量VERSION_CONTROL来作为备份策略。
 
---backup��ѡ��ָ�����Ŀ���ļ�����ʱ�Ķ������������ֱ��ݲ��ԣ�
+--backup该选项指定如果目标文件存在时的动作，共有四种备份策略：
 
-1.CONTROL=none��off : �����ݡ�
+1.CONTROL=none或off : 不备份。
 
-2.CONTROL=numbered��t�����ֱ�ŵı���
+2.CONTROL=numbered或t：数字编号的备份
 
-3.CONTROL=existing��nil��������������ֱ�ŵı��ݣ��������ű���m+1...n��
+3.CONTROL=existing或nil：如果存在以数字编号的备份，则继续编号备份m+1...n：
 
-ִ��mv����ǰ�Ѵ��������ֱ�ŵ��ļ�log2.txt.~1~����ô�ٴ�ִ�н�����log2.txt~2~���Դ����ơ����֮ǰû�������ֱ�ŵ��ļ�����ʹ�����潲���ļ򵥱��ݡ�
+执行mv操作前已存在以数字编号的文件log2.txt.~1~，那么再次执行将产生log2.txt~2~，以次类推。如果之前没有以数字编号的文件，则使用下面讲到的简单备份。
 
-4.CONTROL=simple��never��ʹ�ü򵥱��ݣ��ڱ�����ǰ�����˼򵥱��ݣ��򵥱���ֻ����һ�ݣ��ٴα�����ʱ���򵥱���Ҳ�ᱻ���ǡ�
+4.CONTROL=simple或never：使用简单备份：在被覆盖前进行了简单备份，简单备份只能有一份，再次被覆盖时，简单备份也会被覆盖。
