@@ -1,0 +1,1 @@
+<div align="center"> <img src="../../pics/消息队列/串行方式.png" width="800"/> </div><br>
