@@ -54,6 +54,8 @@ Design an LRU cache with all the operations to be done in O(1)O(1) .
 
 经过分析，我们知道使用双向链表可以保证插入和替换的时间复杂度是O(1)O(1)，但查询的时间复杂度是O(n)O(n)，因为需要对双链表进行遍历。为了让查找效率也达到O(1)O(1)，很自然的会想到使用 hash table 。
 
+<div align="center"> <img src="../../pics/LRUCache/LRUCache.png" width="800"/> </div><br>
+
 
 ```
 class Node{
