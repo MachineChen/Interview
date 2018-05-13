@@ -1,4 +1,4 @@
-<div align="center"> <img src="../../pics/消息队列/串行方式.png" width="800"/> </div><br>
+<div align="center"> <img src="../../pics/ConcurrentHashMap的实现原理/串行方式.png" width="800"/> </div><br>
 
 
 
