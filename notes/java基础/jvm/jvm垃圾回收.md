@@ -66,7 +66,7 @@ java方法区在Sun HotSpot虚拟机中被称为永久代，很多人认为该�
 
 现在的Java虚拟机就联合使用了分代复制、标记-清除和标记-整理算法，java虚拟机垃圾收集器关注的内存结构如下：
 
-<div align="center"> <img src="../../pics/jvm垃圾回收/分代.png" width="800"/> </div><br>
+<div align="center"> <img src="../../../pics/jvm垃圾回收/分代.png" width="800"/> </div><br>
 
 堆内存被分成新生代和年老代两个部分，整个堆内存使用分代复制垃圾收集算法。
 
