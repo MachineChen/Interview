@@ -30,4 +30,4 @@
 
 （4）客户端A发回ACK报文确认，并将确认序号设置为收到序号加1。
 
-<div align="center"> <img src="../../pics/TCP三次握手四次挥手详解/tcp四次挥手.png" width="800"/> </div><br>
+<div align="center"> <img src="../../pics/TCP三次握手四次挥手详解/tcp四次挥手.jpg" width="800"/> </div><br>
