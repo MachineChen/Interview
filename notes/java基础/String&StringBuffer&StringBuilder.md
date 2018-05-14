@@ -80,7 +80,8 @@ a、b和字面上的chenssy都是指向JVM字符串常量池中的"chenssy"对�
 	String c = new String("chenssy");
 	```	
 new关键字一定会产生一个对象chenssy（注意这个chenssy和上面的chenssy不同），同时这个对象是存储在堆中,所以上面应该产生了两个对象：保存在栈中的c和保存堆中chenssy.但是在Java中根本就不存在两个完全一模一样的字符串对象。故堆中的chenssy应该是引用字符串常量池中chenssy。所以c、chenssy、池chenssy的关系应该是：c--->chenssy--->池chenssy。整个关系如下：
-<div align="center"> <img src="../../pics/String存储模型例子.png" width="800"/> </div>
+
+<div align="center"> <img src="../../pics/String&StringBuffer&StringBuilder/String存储模型例子.png" width="800"/> </div>
 
 10. equals和==
 	- ==，对于基本数据类型的变量（byte,short,char,int,long,float,double,boolean)，则直接比较其存储的"值"是否相等；如果作用于引用类型的变量，则比较的是所指向的对象的地址（即是否指向同一个对象）。
