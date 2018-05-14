@@ -5,7 +5,7 @@ Java EE 5.0 平台标准的 ORM 规范，使得应用程序以统一的方式访
 
 JPA(Java Persistence API)是Sun官方提出的Java持久化规范。它为Java开发人员提供了一种对象/关联映射工具来管理Java应用中的关系数据。他的出现主要是为了简化现有的持久化开发工作和整合ORM技术，结束现在Hibernate，TopLink，JDO等ORM框架各自为营的局面。值得注意的是，JPA是在充分吸收了现有Hibernate，TopLink，JDO等ORM框架的基础上发展而来的，具有易于使用，伸缩性强等优点。从目前的开发社区的反应上看，JPA受到了极大的支持和赞扬，其中就包括了Spring与EJB3.0的开发团队。着眼未来几年的技术走向，JPA作为ORM领域标准化整合者的目标应该不难实现。
 
-<div align="center"> <img src="../../../pics/JPA/JAP.png" width="800"/> </div><br>
+<div align="center"> <img src="../../pics/JPA/JPA.png" width="800"/> </div><br>
 
 JPA的总体思想和现有Hibernate,TopLink,JDO等ORM框架大体一致。总的来说，JPA包括以下3方面的技术：
 
