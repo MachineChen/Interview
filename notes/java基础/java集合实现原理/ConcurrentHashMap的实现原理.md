@@ -42,7 +42,7 @@ HashEntry 的学习可以类比着 HashMap 中的 Entry。我们的存储键值�
 
 如下图，我们在一个空桶中插入 A、B、C 两个 HashEntry 对象后的结构图（其实应该为键值对，在这进行了简化以方便更容易理解）：
 
-<div align="center"> <img src="../../pics/ConcurrentHashMap的实现原理/concurrenthashmap1.jpg" width="800"/> </div><br>
+<div align="center"> <img src="../../pics/../ConcurrentHashMap的实现原理/concurrenthashmap1.jpg" width="800"/> </div><br>
 
 # Segment
 
@@ -80,7 +80,7 @@ count 变量是计算器，表示每个 Segment 对象管理的 table 数组（�
 
 我们通过下图来展示一下插入 ABC 三个节点后，Segment 的示意图：
 
-<div align="center"> <img src="../../pics/ConcurrentHashMap的实现原理/concurrenthashmap2.jpg" width="800"/> </div><br>
+<div align="center"> <img src="../../../pics/ConcurrentHashMap的实现原理/concurrenthashmap2.jpg" width="800"/> </div><br>
 
 其实从我个人角度来说，Segment结构是与HashMap很像的。
 
@@ -90,7 +90,7 @@ ConcurrentHashMap 的结构中包含的 Segment 的数组，在默认的并发�
 
 下面我们还有通过一个图来演示一下 ConcurrentHashMap 的结构：
 
-<div align="center"> <img src="../../pics/ConcurrentHashMap的实现原理/concurrenthashmap3.jpg" width="800"/> </div><br>
+<div align="center"> <img src="../../../pics/ConcurrentHashMap的实现原理/concurrenthashmap3.jpg" width="800"/> </div><br>
 
 # 并发写操作
 

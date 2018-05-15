@@ -12,7 +12,7 @@ HashMap 是基于哈希表的 Map 接口的非同步实现。此实现提供所�
 
 在 Java 编程语言中，最基本的结构就是两种，一个是数组，另外一个是指针（引用），HashMap 就是通过这两个数据结构进行实现。HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。
 
-<div align="center"> <img src="../../pics/HashMap的实现原理/hashmap结构.jpg" width="800"/> </div><br>
+<div align="center"> <img src="../../../pics/HashMap的实现原理/hashmap结构.jpg" width="800"/> </div><br>
 
 从上图中可以看出，HashMap 底层就是一个数组结构，数组中的每一项又是一个链表。当新建一个 HashMap 的时候，就会初始化一个数组。
 
